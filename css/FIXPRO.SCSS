@@ -1,0 +1,575 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600&family=Clicker+Script&family=Dancing+Script&family=Kaushan+Script&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@100;200;300;400;500;700;800&family=Nerko+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;0,900;1,100;1,200;1,300;1,500;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;0,400;0,500;1,100&family=Trade+Winds&family=Work+Sans:ital,wght@0,100;0,200;0,400;1,200;1,400&family=ZCOOL+QingKe+HuangYou&display=swap');
+/////////////////////////// start general/////////////////////////
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+scroll-behavior: smooth;
+font-family: 'Montserrat', sans-serif;
+transition: all .2s linear;
+list-style: none;
+text-decoration: none;
+text-transform: capitalize;
+user-select: none;
+}
+$blue:#2597f4;
+$white:#fff;
+$black:#334;
+$light-color:#777;
+$light-bg:#f5f5f5;
+$border:.2rem solid $black;
+$box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+.container{
+padding: 2rem 10%;
+}
+body{
+width: 100%;
+overflow-X: hidden;
+}
+img{
+max-width: 100%;
+height: auto;
+}
+@mixin grad{
+display: grid;
+grid-template-columns: repeat(2,1fr);
+align-items: center;
+gap: 20px;
+}
+@mixin button{
+padding: 10px 15px ;
+background-color: transparent;
+border: 2px solid $black;
+color: $black;
+font-size: 20px;
+font-weight: 500;
+&:hover{
+cursor: pointer;
+background-color: $blue;
+border-color: $blue;
+box-shadow: $box-shadow;
+color: $white;
+}
+}
+@mixin gradBox{
+display: grid;
+align-items: center;
+gap: 20px;
+}
+::-webkit-scrollbar{
+width: 10px;
+background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+background-color: $blue;
+border-radius: 30px;
+}
+.heading{
+text-align: center;
+font-size: 30px;
+span{
+color: $blue;
+}
+}
+/////////////////////////// end general/////////////////////////
+/////////////////////////// start header/////////////////////////
+header{
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 1rem 10%;
+border-bottom: 1px solid $black;
+.logo{
+font-size: 30px;
+span{
+color: #2597f4;
+margin-right: 5px;
+}
+}
+.navList{
+display: flex;
+align-items: center;
+justify-content: center;
+a{
+margin: 0 10px;
+color: $light-color;
+font-weight: 500;
+font-size: 20px;
+position: relative;
+&:hover{
+color: $blue;
+}
+&::before{
+content: "";
+position: absolute;
+bottom: -5px;
+left: 0;
+width: 0;
+height: 2px;
+background-color: $blue;
+transition: .3s;
+}
+&:hover:before{
+width: 100%;
+}
+}
+}
+.icon{
+    font-size: 25px;
+    display: none
+}
+}
+/////////////////////////// end header/////////////////////////
+/////////////////////////// start home/////////////////////////
+.home .container,
+.about .container{
+@include grad;
+.home-info{
+h2{
+font-size: 3rem;
+}
+p{
+margin: 10px 0;
+}
+.btn{
+ @include button 
+}
+}
+}
+/////////////////////////// end home/////////////////////////
+/////////////////////////// start under /////////////////////////
+.under{
+background-color: $light-bg;
+.ulContainer{
+grid-template-columns: repeat(auto-fit,minmax(285px,auto));
+@include gradBox;
+li{
+display: flex;
+align-items: center;
+justify-content: center;
+img{
+max-width: 100%;
+width: 80px;
+}
+.info{
+display: flex;
+flex-direction: column;
+}
+}
+}
+}
+/////////////////////////// end under /////////////////////////
+//////////////////////////////////////// start about
+.about{
+    margin-top: 4%;
+}
+.about-info{
+h2{
+font-size: 40px;
+}
+p{
+ margin-top: 10px
+}
+.btn{
+@include button;
+margin-top: 10px;
+}
+}
+//////////////////////////////////////// end about
+//////////////////////////////////////// start service
+.service .container{
+background-color: $light-bg;
+.serviceBox{
+grid-template-columns: repeat(auto-fit,minmax(300px,auto));
+@include gradBox;
+margin-top: 40px;
+.box{
+text-align: center;
+border: 2px solid #000;
+padding: 10px;
+background-color: $white;
+cursor: pointer;
+&:hover{
+background-color: $black;
+color: $white;
+}
+img{
+width: 70px;
+}
+h2{
+margin: 15px 0;
+}
+p{
+line-height: 30px;
+}
+}
+}
+}
+//////////////////////////////////////// end service
+//////////////////////////////////////// start gallery
+.gallery .container{
+.galleryBox{
+@include gradBox;
+grid-template-columns: repeat(auto-fit,minmax(309px,auto));
+margin-top: 40px;
+.box{
+position: relative;
+overflow: hidden;
+&:hover{
+img{
+transform: scale(1.1);
+}
+}
+}
+}
+}
+//////////////////////////////////////// end gallery
+////////////////////////////////////////start choose
+.choose{
+background-color: $light-bg;
+.chooseBox{
+ @include gradBox();
+grid-template-columns: repeat(auto-fit,minmax(295px,auto));
+margin-top: 30px;
+.box{
+text-align: center;
+border: 2px solid $black;
+padding: 20px;
+transition: .3s;
+&:hover{
+color: $white;
+background-color: $black;
+cursor: pointer;
+}
+img{
+width: 90px;
+}
+h2{
+ margin: 10px 0;
+}
+p{ 
+line-height: 30px;
+}
+}
+}
+}
+//////////////////////////////////////// end choose
+//////////////////////////////////////// start team
+.team{
+.teamBox{
+display: grid;
+grid-template-columns: repeat(auto-fit,minmax(285px,auto));
+gap: 20px;
+margin-top: 20px;
+text-align: center;
+.box{
+height: 88%;
+overflow: hidden;
+transition: .5s;
+&:hover {
+height: 100%;
+}
+h2{
+margin: 10px 0;
+}
+ul{
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 10px;
+li{
+margin: 0 10px;
+background-color: $black;
+padding: 15px;
+font-size: 20px;
+color: $white;
+&:hover{
+background-color: $blue;
+}
+}
+}
+}
+}
+}
+//////////////////////////////////////// end team
+//////////////////////////////////////// start reviews
+.reviews{
+background-color: $light-bg;
+.reviewsBox{
+grid-template-columns: repeat(auto-fit,minmax(285px,auto));
+@include gradBox();
+margin-top: 5%;
+text-align: center;
+.box{
+background-color: $white;
+border: 2px solid ;
+padding: 20px;
+position: relative;
+&:hover{
+color: $white;
+background-color: $black;
+}
+&::before,
+&::after{
+content: "\2c";
+font-family: "fontAwesome";
+position: absolute;
+transform: translate(-50%,-50%);
+font-size: 250px;
+color: $blue;
+top: 10%;
+opacity: .3;
+}
+&::before{
+left: 57%;
+}
+&::after{
+left: 46%;
+}    
+ul{
+display: flex;
+align-items: center;
+justify-content: center;
+li{
+color: $blue;
+}
+}
+p{
+ margin: 15px 0;
+}
+.img img{
+width: 70px;
+height: 70px;
+border-radius: 50%;
+}
+}
+}
+}
+//////////////////////////////////////// end reviews
+//////////////////////////////////////// start contact
+.contact{
+.contactBox{
+@include grad();
+margin-top: 30px;
+.mapContent iframe{
+    max-width: 100%;
+}
+.input{
+border: 2px solid;
+padding: 20px 15px;
+h2{
+font-size: 30px;
+}
+.small{
+ margin: 10px 0;
+ display: flex;
+ gap: 15px;
+}
+input,
+textarea
+{
+width: 100%;
+border: 2px solid ;
+padding: 10px;
+resize: none;
+font-size: 20px;
+&:focus{
+background-color: $black;
+color: $white;
+&::placeholder{
+color: $white
+}
+}
+}
+button{
+@include button();
+margin-top: 5px;
+}
+}
+}
+}
+//////////////////////////////////////// end contact
+//////////////////////////////////////// start end
+.end{
+.container{
+background-color: $light-bg;
+.endBox{
+@include gradBox();
+grid-template-columns: repeat(auto-fit,minmax(290px,auto));
+margin-bottom:20px;
+align-items: flex-start;
+.box{
+h2{
+margin-bottom: 20px;
+}
+&.one,
+&.two,
+&.three
+{
+li{
+margin: 15px 0;
+i{
+color: $blue;
+margin-right: 5px;
+}
+}
+}
+&.two span{
+color: $blue; margin-right: 10px;         
+}
+&.four{
+span{
+opacity: .7;
+}
+form{
+margin-top: 15px;
+.input input{
+width: 100%;
+padding: 15px ;
+font-size: 20px;
+margin-bottom: 10px;
+}
+button{
+@include button();
+margin-bottom :15px;
+}          
+}
+ul{
+display: flex;
+li{
+margin: 0 10px;
+font-size: 20px;
+border: 2px solid $black;
+padding: 10px 15px;
+color: $white;
+background-color: $black;
+cursor: pointer;
+&:hover{
+background-color: transparent;
+color: $black;
+}
+}
+}
+}
+}
+}
+.endHeading{
+text-align: center;
+margin: 10px;
+span{
+ color: $blue;
+}
+}
+}
+}
+//////////////////////////////////////// end end
+ @media (max-width:1330px) {
+.home .container
+{
+.home-info{
+h2{
+font-size: 2rem;
+}
+}
+}
+}
+@media (max-width:1000px) {
+header{
+padding: 1rem 5%;
+}
+.home .container
+{
+.home-info{
+h2{
+font-size: 1.5rem;
+}  
+}
+}
+.about .container{
+h2{
+font-size: 2rem;
+}
+}
+}
+@media (max-width:850px) {
+header{
+.navBar{
+position: fixed;
+height: 70%;
+width: 75%;
+border-radius: 5px;
+box-shadow: 0 0 5px rgba(0,0,0,.5);
+background-color: $white;
+top: 45%;
+left: 52%;
+transform: translate(-50%,-50%);
+z-index: 1000000;
+display: none;
+&.active{
+display: block;
+}
+.navList{
+flex-direction: column;
+margin-top: 50px;         
+li{
+margin: 20px 0;
+a{
+font-weight: 600;
+font-size: 25px;
+color: $blue;
+}
+}
+}
+}
+.icon{
+display: block
+}
+}
+.about-info{
+order: 2; 
+}
+.home .container,
+.about .container{
+display: grid;
+grid-template-columns: repeat(1,1fr);
+}      
+.contact{
+.contactBox{
+grid-template-columns: repeat(1,1fr);
+.mapContent {
+text-align: center;
+}
+}
+}
+}
+@media (max-width:550px) {
+.heading{
+text-align: center;
+font-size:20px;
+span{
+color: $blue;
+}
+}  
+}
+@media (max-width:380px) {
+.container{
+padding: 2rem 7%;
+}
+.service .container,
+.gallery .container,
+.reviews .container{
+padding: 2rem 1%;
+}      
+small{
+flex-direction: column;
+}         
+}
+@media (max-width:330px) {
+.input input{
+width: 80%;
+}
+.endHeading{font-size: 15px;
+}
+.end .container .endBox .box.four ul li{margin: 0 5px;
+}
+}
